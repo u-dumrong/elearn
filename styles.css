@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+body {
+    font-family: k2d;
+    color: black;
+    font-size: larger;
+}
+
+button {
+    font-family: k2d;
+}
+
+/* CSS ปรับแต่งสีลิงก์ */
+.btn-link {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #041c54; /* สีฟ้า */
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.btn-link:hover {
+    color: #2955bb; /* สีฟ้าเข้มเมื่อ hover */
+    text-decoration: none;
+}
+
+.bg {
+    animation: slide 15s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #facb05 50%, #041c54 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 20s;
+}
+
+.bg3 {
+    animation-duration: 25s;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}
