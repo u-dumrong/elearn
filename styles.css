@@ -10,6 +10,10 @@ button {
     font-family: k2d;
 }
 
+.navy {
+    background-color: #041c54;
+}
+
 /* CSS ปรับแต่งสีลิงก์ */
 .btn-link {
     background: none;
