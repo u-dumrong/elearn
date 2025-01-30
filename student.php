@@ -12,7 +12,7 @@ require "session.php";
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        
+
     </style>
 </head>
 
@@ -55,49 +55,20 @@ require "session.php";
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body">
-            <div class="dropdown dropend p-1">
-                <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">
-                    บทที่ 1
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">แบบทดสอบก่อนเรียน</a></li>
-                    <li><a class="dropdown-item" href="chapter/chapter1/lesson.php">บทเรียน</a></li>
-                    <li><a class="dropdown-item" href="#">แบบทดสอบหลังเรียน</a></li>
-                </ul>
-            </div>
-
-            <div class="dropdown dropend p-1">
-                <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">
-                    บทที่ 2
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">แบบทดสอบก่อนเรียน</a></li>
-                    <li><a class="dropdown-item" href="#">บทเรียน</a></li>
-                    <li><a class="dropdown-item" href="#">แบบทดสอบหลังเรียน</a></li>
-                </ul>
-            </div>
-
-            <div class="dropdown dropend p-1">
-                <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">
-                    บทที่ 3
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">แบบทดสอบก่อนเรียน</a></li>
-                    <li><a class="dropdown-item" href="#">บทเรียน</a></li>
-                    <li><a class="dropdown-item" href="#">แบบทดสอบหลังเรียน</a></li>
-                </ul>
-            </div>
-
-            <div class="dropdown dropend p-1">
-                <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">
-                    บทที่ 4
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">แบบทดสอบก่อนเรียน</a></li>
-                    <li><a class="dropdown-item" href="#">บทเรียน</a></li>
-                    <li><a class="dropdown-item" href="#">แบบทดสอบหลังเรียน</a></li>
-                </ul>
-            </div>
+            <?php
+            for ($i = 1; $i <= 7; $i++) {
+                echo '<div class="dropdown dropend p-1">';
+                echo '<button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">';
+                echo 'บทที่ ' . $i;
+                echo '</button>';
+                echo '<ul class="dropdown-menu">';
+                echo '<li><a class="dropdown-item" href="chapter/chapter' . $i . '/pretest.php">แบบทดสอบก่อนเรียน</a></li>';
+                echo '<li><a class="dropdown-item" href="chapter/chapter' . $i . '/lesson.php">บทเรียน</a></li>';
+                echo '<li><a class="dropdown-item" href="chapter/chapter' . $i . '/postest.php">แบบทดสอบหลังเรียน</a></li>';
+                echo '</ul>';
+                echo '</div>';
+            }
+            ?>
         </div>
     </div>
 
@@ -130,7 +101,7 @@ require "session.php";
 
     <!-- ส่วนท้าย -->
     <div class="mt-5 p-4 bg-dark text-center">
-        <a href="mailto:66309010042@udontech.ac.th">66309010042@udontech.ac.th</a>
+        <a href="mailto:66309010042@udontech.ac.th" class="text-warning">66309010042@udontech.ac.th</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

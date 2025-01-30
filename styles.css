@@ -14,6 +14,15 @@ button {
     background-color: #041c54;
 }
 
+.navyf {
+    color: #041c54;
+}
+
+.btn.navy:hover {
+    background-color: #2955bb; /* เปลี่ยนสีพื้นหลัง */
+}
+
+
 /* CSS ปรับแต่งสีลิงก์ */
 .btn-link {
     background: none;

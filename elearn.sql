@@ -32,7 +32,6 @@ CREATE TABLE
         pos6 INT DEFAULT 0,
         pre7 INT DEFAULT 0,
         pos7 INT DEFAULT 0,
-        score INT DEFAULT 0,
         FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
     );
 
@@ -43,3 +42,8 @@ CREATE TABLE
         department VARCHAR(100),
         FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
     );
+
+ALTER TABLE students
+ADD COLUMN total_score INT GENERATED ALWAYS AS (
+    pre1 + pos1 + pre2 + pos2 + pre3 + pos3 + pre4 + pos4 + pre5 + pos5 + pre6 + pos6 + pre7 + pos7
+) STORED;

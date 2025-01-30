@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>แจ้งเตือน</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="/elearn/styles.css">
         <style>
             body {
                 text-align: center;
@@ -64,6 +64,6 @@ if (!isset($_SESSION['user_id'])) {
     </body>
     </html>
     ';
-    header('refresh:7;index.html'); // รีไดเร็กต์ไปหน้าแรก
+    header('refresh:7;/elearn/index.html'); // รีไดเร็กต์ไปหน้าแรก
     exit();
 }
