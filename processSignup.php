@@ -32,10 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // ถ้าไม่มีข้อมูลซ้ำ ให้เพิ่มข้อมูลใหม่
         $role = 'student'; // กำหนดบทบาทให้เป็น student โดยอัตโนมัติ
         // ตรวจสอบว่าตรงกับเงื่อนไขพิเศษสำหรับครู
-        $teacherUsername = "teacher"; // ตัวอย่าง username ของครูที่อนุญาต
-        $teacherPassword = "l1pv55y"; // ตัวอย่างรหัสผ่านของครูที่อนุญาต 
+        //$teacherUsername = "teacher"; // ตัวอย่าง username ของครูที่อนุญาต
+        $teacherPassword = "ud0nth@n1"; // ตัวอย่างรหัสผ่านของครูที่อนุญาต 
 
-        if ($username === $teacherUsername && $password === $teacherPassword) {
+        //if ($username === $teacherUsername && $password === $teacherPassword) {
+        if ($password === $teacherPassword) {
             $role = 'teacher'; // ถ้าตรงกับเงื่อนไข ให้กำหนดบทบาทเป็น teacher
         }
 

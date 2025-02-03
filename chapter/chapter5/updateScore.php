@@ -2,18 +2,18 @@
 require "../../session.php";
 
 $data = json_decode(file_get_contents("php://input"), true);
-if (!isset($data['pre1'])) {
+if (!isset($data['pre5'])) {
     http_response_code(400);
     echo json_encode(['error' => 'ไม่มีคะแนนส่งมา']);
     exit();
 }
 
-$score = intval($data['pre1']);
+$score = intval($data['pre5']);
 $user_id = $_SESSION['user_id'];
 
 // อัพเดตคะแนนในฐานข้อมูล
 require '../../dbConfig.php'; // ไฟล์สำหรับเชื่อมต่อฐานข้อมูล
-$stmt = $conn->prepare("UPDATE students SET pre1 = ? WHERE user_id = ?");
+$stmt = $conn->prepare("UPDATE students SET pre5 = ? WHERE user_id = ?");
 if (!$stmt) {
     http_response_code(500);
     echo json_encode(['error' => 'เกิดข้อผิดพลาดในการเตรียมคำสั่ง SQL']);

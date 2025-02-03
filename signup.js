@@ -15,10 +15,8 @@ document.getElementById('signupButton').addEventListener('click', function () {
     })
         .then(data => {
             alert(data); // แสดงข้อความตอบกลับด้วย alert() หรือพิมพ์ข้อผิดพลาดในคอนโซลหากเกิดปัญหา
-            if (data.trim().includes("ลงทะเบียนสำเร็จ!")) {
-                //window.location.href = "login.html";
-            } else {
-                alert("การลงทะเบียนล้มเหลว: " + data);
+            if (data.trim().includes("ลงทะเบียนสำเร็จในฐานะครู!") || data.trim().includes("ลงทะเบียนสำเร็จในฐานะนักเรียน!")){
+                window.location.href = "login.html";
             }
         })
         .catch(error => {

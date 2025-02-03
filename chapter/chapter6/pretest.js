@@ -39,6 +39,6 @@ document.getElementById('checkAnswers').addEventListener('click', function () {
             //window.location.href = '../../../profile.php';
         }
     };
-    const data = { pre1: score };
+    const data = { pre5: score };
     xhr.send(JSON.stringify(data));
 });
