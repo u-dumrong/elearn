@@ -36,7 +36,7 @@ require "session.php";
 
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link active" href="logout.php">Logout</a>
+                    <a class="nav-link active" href="profile.php">โปรไฟล์</a>
                 </li>
             </ul>
         </div>

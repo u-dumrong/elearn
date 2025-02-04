@@ -24,7 +24,7 @@ document.getElementById('checkAnswers').addEventListener('click', function () {
         q22: "3",
         q23: "3",
         q24: "2",
-        q25: "2",
+        q25: "2"
     };
 
     const form = document.getElementById("quizForm");

@@ -75,53 +75,287 @@ require "../../session.php";
     <!-- แบบทดสอบ -->
     <div class="container p-5 my-5 bg-white">
         <h1 class="text-center navyf">แบบทดสอบก่อนเรียน</h1>
-        <h2 class="text-danger text-center">บทที่ 1. ความรู้เบื้องต้นเกี่ยวกับเครื่องมือกล</h2>
-        <p><b class="text-danger">คำชี้แจง :</b> จงเลือกคำตอบข้อที่ถูกต้องที่สุดเพียงคำตอบเดียว (14 คะแนน)</p>
+        <h2 class="text-danger text-center">บทที่ 2. เครื่องมือขนาดเล็ก</h2>
+        <p><b class="text-danger">คำชี้แจง :</b> จงเลือกคำตอบข้อที่ถูกต้องที่สุดเพียงคำตอบเดียว (25 คะแนน)</p>
         <form id="quizForm">
-            <p class="mt-5">1. ข้อใด คือ ความหมายของเครื่องมือกล</p>
+        <p class="mt-5">1. การขันหรือคลายสลักเกลียวในพื้นที่แคบและลึกควรเลือกใช้เครื่องมือชนิดใด</p>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q1" value="1">
-                <label class="form-check-label" for="radio1">สิ่งที่ประกอบด้วยชิ้นส่วนหลายชิ้นสำหรับใช้ก่อกำเนิดพลังงาน</label>
+                <label class="form-check-label" for="radio1">ประแจตะขอ</label>
             </div>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q1" value="2">
-                <label class="form-check-label" for="radio2">สิ่งที่ประกอบด้วยชิ้นส่วนหลายชิ้นสำหรับใช้แปรสภาพพลังงาน</label>
+                <label class="form-check-label" for="radio2">ประแจบล็อก</label>
             </div>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q1" value="3">
-                <label class="form-check-label" for="radio3">เครื่องมือและอุปกรณ์ที่ใช้ในการแปรรูปหรือผลิตชิ้นงาน</label>
+                <label class="form-check-label" for="radio3">ประแจหกเหลี่ยม</label>
             </div>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q1" value="4">
-                <label class="form-check-label" for="radio4">สิ่งที่ประกอบด้วยชิ้นส่วนหลายชิ้นสำหรับใช้ก่อกำเนิดพลังงานส่งพลังงาน</label>
+                <label class="form-check-label" for="radio4">ประแจปากตาย</label>
             </div>
 
-            <p class="mt-5">7. เครื่องมือกลข้อใดแตกต่างจากพวก</p>
+            <p class="mt-5">2. การขันล็อกแกนเพลาของเครื่องกัด ควรเลือกใช้เครื่องมือชนิดใด</p>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q2" value="1">
+                <label class="form-check-label" for="radio1">ประแจตะขอ</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q2" value="2">
+                <label class="form-check-label" for="radio2">ประแจปากตาย</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q2" value="3">
+                <label class="form-check-label" for="radio3">ประแจบล็อก</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q2" value="4">
+                <label class="form-check-label" for="radio4">ประแจหกเหลี่ยม</label>
+            </div>
+
+            <p class="mt-5">3. เครื่องมือชนิดใดใช้ขันหรือคลายสกรูหัวฝัง</p>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q3" value="1">
+                <label class="form-check-label" for="radio1">ประแจตะขอ</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q3" value="2">
+                <label class="form-check-label" for="radio2">ประแจบล็อก</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q3" value="3">
+                <label class="form-check-label" for="radio3">เประแจหกเหลี่ยม</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q3" value="4">
+                <label class="form-check-label" for="radio4">ประแจปากตาย</label>
+            </div>
+
+            <p class="mt-5">4. เครื่องมือชนิดใช้ในการขันท่อหรือจับยึดท่อ คือ</p>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q4" value="1">
+                <label class="form-check-label" for="radio1"><img src="pretest/4a.png" alt="ก." style="width:70%"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q4" value="2">
+                <label class="form-check-label" for="radio2"><img src="pretest/4b.png" alt="ข." style="width:70%"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q4" value="3">
+                <label class="form-check-label" for="radio3"><img src="pretest/4c.png" alt="ค." style="width:70%"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q4" value="4">
+                <label class="form-check-label" for="radio4"><img src="pretest/4d.png" alt="ง." style="width:70%"></label>
+            </div>
+
+            <p class="mt-5">5. เครื่องมือชนิดใดใช้ในการขันหรือคลายสกรูหัวผ่าร่องตรง คือ</p>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q5" value="1">
+                <label class="form-check-label" for="radio1"><img src="pretest/5a.png" alt="ก." style="width:70%"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q5" value="2">
+                <label class="form-check-label" for="radio2"><img src="pretest/5b.png" alt="ข." style="width:70%"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q5" value="3">
+                <label class="form-check-label" for="radio3"><img src="pretest/5c.png" alt="ค." style="width:70%"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q5" value="4">
+                <label class="form-check-label" for="radio4"><img src="pretest/5d.png" alt="ง." style="width:70%"></label>
+            </div>
+
+            <p class="mt-5">6. คีมชนิดใดสามารถจับยึดชิ้นงานแบน ชิ้นงานกลมและตัดเส้นลวดขนาดเล็กได้</p>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q6" value="1">
+                <label class="form-check-label" for="radio1">คีมล็อก</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q6" value="2">
+                <label class="form-check-label" for="radio2">คีมตัด</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q6" value="3">
+                <label class="form-check-label" for="radio3">คีมปากจิ้งจก</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q6" value="4">
+                <label class="form-check-label" for="radio4">คีมปากประสม</label>
+            </div>
+
+            <p class="mt-5">7. คีมชนิดใดใช้สำหรับจับหรือบีบชิ้นงานขนาดเล็ก</p>
             <div class="d-flex flex-column flex-md-row"> <!-- แนวตั้งบนมือถือ แนวนอนบนจอใหญ่ -->
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="q7" value="1">
                     <label class="form-check-label" for="radio1">
-                        <img src="pretest/7a.png" alt="ก." style="width:70%">
+                    คีมล็อก
                     </label>
                 </div>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="q7" value="2">
                     <label class="form-check-label" for="radio2">
-                        <img src="pretest/7b.png" alt="ข." style="width:70%">
+                    คีมตัด
                     </label>
                 </div>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="q7" value="3">
                     <label class="form-check-label" for="radio2">
-                        <img src="pretest/7c.png" alt="ค." style="width:70%">
+                    คีมปากจิ้งจก
                     </label>
                 </div>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="q7" value="4">
                     <label class="form-check-label" for="radio2">
-                        <img src="pretest/7d.png" alt="ง." style="width:70%">
+                    คีมปากประสม
                     </label>
                 </div>
+            </div>
+
+            <p class="mt-5">8. คีมชนิดใดมีปากด้านข้างเอียงเป็นคมตัดใช้สำหรับตัดเส้นลวดขนาดเล็กและสายไฟฟ้า</p>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q8" value="1">
+                <label class="form-check-label" for="radio1">คีมล็อก</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q8" value="2">
+                <label class="form-check-label" for="radio2">คีมตัด</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q8" value="3">
+                <label class="form-check-label" for="radio3">คีมปากจิ้งจก</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q8" value="4">
+                <label class="form-check-label" for="radio4">คีมปากประสม</label>
+            </div>
+
+            <p class="mt-5">9. จากรูปการถอด-ประกอบแหวนสปริงล็อกในควรเลือกใช้เครื่องมือชนิดใด</p>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q9" value="1">
+                <label class="form-check-label" for="radio1"><img src="pretest/9a.png" alt="ก." style="width:70%"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q9" value="2">
+                <label class="form-check-label" for="radio2"><img src="pretest/9b.png" alt="ข." style="width:70%"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q9" value="3">
+                <label class="form-check-label" for="radio3"><img src="pretest/9c.png" alt="ค." style="width:70%"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q9" value="4">
+                <label class="form-check-label" for="radio4"><img src="pretest/9d.png" alt="ง." style="width:70%"></label>
+            </div>
+
+            <p class="mt-5">10. การขันยึดหรือคลายสกรูหัวหกเหลี่ยมต้องใช้เครื่องมือชนิดใด<br><img src="pretest/10q.png" alt="ก." style="width:70%"></p>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q10" value="1">
+                <label class="form-check-label" for="radio1">ประแจหกเหลี่ยม</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q10" value="2">
+                <label class="form-check-label" for="radio2">ไขควงปากแบน</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q10" value="3">
+                <label class="form-check-label" for="radio3">ไขควงปากแฉก</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q10" value="4">
+                <label class="form-check-label" for="radio4">คีมปากผสม</label>
+            </div>
+
+            <p class="mt-5">11. เครื่องมือกลข้อใดแตกต่างจากพวก</p>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q11" value="1">
+                <label class="form-check-label" for="radio1"><img src="pretest/11a.png" alt="ก." style="width:70%"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q11" value="2">
+                <label class="form-check-label" for="radio2"><img src="pretest/11b.png" alt="ข." style="width:70%"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q11" value="3">
+                <label class="form-check-label" for="radio3"><img src="pretest/11c.png" alt="ค." style="width:70%"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q11" value="4">
+                <label class="form-check-label" for="radio4"><img src="pretest/11d.png" alt="ง." style="width:70%"></label>
+            </div>
+
+            <p class="mt-5">12. เครื่องมือในข้อใดแตกต่างจากพวก</p>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q12" value="1">
+                <label class="form-check-label" for="radio1"><img src="pretest/12a.png" alt="ก." style="width:70%"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q12" value="2">
+                <label class="form-check-label" for="radio2"><img src="pretest/12b.png" alt="ข." style="width:70%"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q12" value="3">
+                <label class="form-check-label" for="radio3"><img src="pretest/12c.png" alt="ค." style="width:70%"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q12" value="4">
+                <label class="form-check-label" for="radio4"><img src="pretest/12d.png" alt="ง." style="width:70%"></label>
+            </div>
+
+            <p class="mt-5">13. สกัดที่มีคมตัดเป็นรูปสี่เหลี่ยมขนมเปียกปูนใช้ในงานเซาะผิวงานให้เป็นร่องตัววีหรือร่องสี่เหลี่ยม คือ</p>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q13" value="1">
+                <label class="form-check-label" for="radio1">สกัดปากแบน</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q13" value="2">
+                <label class="form-check-label" for="radio2">สกัดปากจิ้งจก</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q13" value="3">
+                <label class="form-check-label" for="radio3">สกัดปลายมน</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q13" value="4">
+                <label class="form-check-label" for="radio4">สกัดปลายตัดรูปเพชร</label>
+            </div>
+
+            <p class="mt-5">14. ค้อนที่เหมาะสำหรับงานเคาะเบา ๆ เพื่อปรับแต่งชิ้นงานให้ได้ตำแหน่งบนอุปกรณ์จับยึด คือ</p>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q14" value="1">
+                <label class="form-check-label" for="radio1">ค้อนหัวตรง</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q14" value="2">
+                <label class="form-check-label" for="radio2">ค้อนหัวพลาสติก</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q14" value="3">
+                <label class="form-check-label" for="radio3">ค้อนหัวกลม</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q14" value="4">
+                <label class="form-check-label" for="radio4">ค้อนหัวขวาง</label>
+            </div>
+
+            <p class="mt-5">15. จากรูป คือ คมตัดตะไบชนิดใด<br><img src="pretest/15q.png" alt="ง." style="width:70%"></p>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q15" value="1">
+                <label class="form-check-label" for="radio1">ตะไบคมตัดเดี่ยว</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q15" value="2">
+                <label class="form-check-label" for="radio2">ตะไบคมตัดคู่</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q15" value="3">
+                <label class="form-check-label" for="radio3">ตะไบคมตัดโค้ง</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="q15" value="4">
+                <label class="form-check-label" for="radio4">ตะไบคมตัดบุ้ง</label>
             </div>
 
             <div class="d-flex justify-content-center mt-5">

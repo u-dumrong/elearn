@@ -1,8 +1,6 @@
 <?php
 require "../../session.php";
 
-session_start();
-
 // เชื่อมต่อฐานข้อมูล
 require '../../dbConfig.php'; // ไฟล์สำหรับเชื่อมต่อฐานข้อมูล
 

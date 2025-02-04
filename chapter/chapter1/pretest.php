@@ -1,6 +1,5 @@
 <?php
 require "../../session.php";
-$chapter = 1; // เปลี่ยนเป็นหมายเลขบทที่ต้องการ เช่น 2, 3, ...
 ?>
 
 <!DOCTYPE html>

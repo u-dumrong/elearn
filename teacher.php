@@ -55,13 +55,16 @@ if ($role === 'student') {
                     <a class="nav-link active" href="teacher.php">หน้าแรก</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link active" href="score.php">รายชื่อนักเรียน</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link active" data-bs-toggle="offcanvas" data-bs-target="#demo">เมนู</a>
                 </li>
             </ul>
 
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link active" href="logout.php">Logout</a>
+                    <a class="nav-link active" href="profile.php">โปรไฟล์</a>
                 </li>
             </ul>
         </div>
