@@ -1,30 +1,22 @@
 document.getElementById('checkAnswers').addEventListener('click', function () {
     const correctAnswers = {
-        q1: "2",
-        q2: "1",
-        q3: "3",
-        q4: "1",
-        q5: "4",
-        q6: "4",
-        q7: "3",
-        q8: "2",
-        q9: "2",
-        q10: "3",
-        q11: "4",
-        q12: "3",
-        q13: "4",
-        q14: "2",
+        q1: "1",
+        q2: "3",
+        q3: "2",
+        q4: "3",
+        q5: "3",
+        q6: "2",
+        q7: "1",
+        q8: "3",
+        q9: "1",
+        q10: "2",
+        q11: "1",
+        q12: "4",
+        q13: "2",
+        q14: "3",
         q15: "1",
-        q16: "3",
-        q17: "3",
-        q18: "4",
-        q19: "1",
-        q20: "3",
-        q21: "2",
-        q22: "3",
-        q23: "3",
-        q24: "2",
-        q25: "2"
+        q16: "2",
+        q17: "3"
     };
 
     const form = document.getElementById("quizForm");
@@ -50,6 +42,6 @@ document.getElementById('checkAnswers').addEventListener('click', function () {
             //window.location.href = '../../../profile.php';
         }
     };
-    const data = { pre5: score };
+    const data = { pre6: score };
     xhr.send(JSON.stringify(data));
 });

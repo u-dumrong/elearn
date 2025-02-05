@@ -125,7 +125,7 @@ require "../../session.php";
             </div>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q3" value="3">
-                <label class="form-check-label" for="radio3">เประแจหกเหลี่ยม</label>
+                <label class="form-check-label" for="radio3">ประแจหกเหลี่ยม</label>
             </div>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q3" value="4">

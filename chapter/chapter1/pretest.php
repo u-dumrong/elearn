@@ -201,13 +201,13 @@ require "../../session.php";
                 </div>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="q7" value="3">
-                    <label class="form-check-label" for="radio2">
+                    <label class="form-check-label" for="radio3">
                         <img src="pretest/7c.png" alt="ค." style="width:70%">
                     </label>
                 </div>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="q7" value="4">
-                    <label class="form-check-label" for="radio2">
+                    <label class="form-check-label" for="radio4">
                         <img src="pretest/7d.png" alt="ง." style="width:70%">
                     </label>
                 </div>

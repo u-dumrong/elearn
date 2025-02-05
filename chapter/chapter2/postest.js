@@ -3,17 +3,18 @@ document.getElementById('checkAnswers').addEventListener('click', function () {
         q1: "3",
         q2: "4",
         q3: "2",
-        q4: "4",
-        q5: "2",
-        q6: "1",
-        q7: "2",
-        q8: "4",
-        q9: "2",
-        q10: "1",
-        q11: "4",
-        q12: "1",
-        q13: "4",
-        q14: "3"
+        q4: "3",
+        q5: "1",
+        q6: "2",
+        q7: "4",
+        q8: "1",
+        q9: "3",
+        q10: "3",
+        q11: "1",
+        q12: "2",
+        q13: "1",
+        q14: "4",
+        q15: "1"
     };
 
     const form = document.getElementById("quizForm");
@@ -39,6 +40,6 @@ document.getElementById('checkAnswers').addEventListener('click', function () {
             //window.location.href = '../../../profile.php';
         }
     };
-    const data = { pos1: score };
+    const data = { pos2: score };
     xhr.send(JSON.stringify(data));
 });

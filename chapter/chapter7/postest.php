@@ -74,274 +74,325 @@ require "../../session.php";
     <!-- แบบทดสอบ -->
     <div class="container p-5 my-5 bg-white">
         <h1 class="text-center navyf">แบบทดสอบหลังเรียน</h1>
-        <h2 class="text-danger text-center">บทที่ 1. ความรู้เบื้องต้นเกี่ยวกับเครื่องมือกล</h2>
+        <h2 class="text-danger text-center">บทที่ 7. ความรู้เบื้องต้นเกี่ยวกับเครื่องมือกล</h2>
         <p><b class="text-danger">คำชี้แจง :</b> จงเลือกคำตอบข้อที่ถูกต้องที่สุดเพียงคำตอบเดียว (14 คะแนน)</p>
         <form id="quizForm">
-            <p class="mt-5">1. ข้อใด คือ ความหมายของเครื่องมือกล</p>
+            <p class="mt-5">1.ข้อใด คือ เครื่องเจียระไนราบ เพลานอน</p>
+            <div class="d-flex flex-column flex-md-row"> <!-- แนวตั้งบนมือถือ แนวนอนบนจอใหญ่ -->
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q1" value="1">
+                    <label class="form-check-label" for="radio1">
+                        <img src="postest/Q1A.PNG" alt="pic" style="width:70%">
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q1" value="2">
+                    <label class="form-check-label" for="radio2">
+                        <img src="postest/Q1B.PNG" alt="pic" style="width:70%">
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q1" value="3">
+                    <label class="form-check-label" for="radio2">
+                        <img src="postest/Q1C.PNG" alt="pic" style="width:70%">
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q1" value="4">
+                    <label class="form-check-label" for="radio2">
+                        <img src="postest/Q1D.PNG" alt="pic" style="width:70%">
+                    </label>
+                </div>
+            </div>
+
+            <p class="mt-5">2.จากรูป คือ เครื่องเจียระไนชนิดใด</p>
+            <img src="postest/Q2.PNG" alt="pic" style="width:70%">
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q1" value="1">
-                <label class="form-check-label" for="radio1">สิ่งที่ประกอบด้วยชิ้นส่วนหลายชิ้นสำหรับใช้ก่อกำเนิดพลังงาน</label>
+                <label class="form-check-label" for="radio1">เครื่องเจียระไนราบ</label>
             </div>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q1" value="2">
-                <label class="form-check-label" for="radio2">สิ่งที่ประกอบด้วยชิ้นส่วนหลายชิ้นสำหรับใช้แปรสภาพพลังงาน</label>
+                <label class="form-check-label" for="radio2">เครื่องเจียระไนไร้ศูนย์</label>
             </div>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q1" value="3">
-                <label class="form-check-label" for="radio3">เครื่องมือและอุปกรณ์ที่ใช้ในการแปรรูปหรือผลิตชิ้นงาน</label>
+                <label class="form-check-label" for="radio3">เครื่องเจียระไนทรงกระบอก</label>
             </div>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q1" value="4">
-                <label class="form-check-label" for="radio4">สิ่งที่ประกอบด้วยชิ้นส่วนหลายชิ้นสำหรับใช้ก่อกำเนิดพลังงานส่งพลังงาน</label>
-            </div>
+                <label class="form-check-label" for="radio4">เครื่องเจียระไนลับคมตัด</label>
 
-            <p class="mt-5">2. ข้อใด <b class="text-danger">ไม่ใช่</b> เครื่องมือกล</p>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q2" value="1">
-                <label class="form-check-label" for="radio1">เครื่องเลื่อยกล</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q2" value="2">
-                <label class="form-check-label" for="radio2">เครื่องเจาะ</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q2" value="3">
-                <label class="form-check-label" for="radio3">เครื่องกลึง</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q2" value="4">
-                <label class="form-check-label" for="radio4">เครื่องยนต์</label>
-            </div>
+                <p class="mt-5">3.ใช้ยึดกับพื้นโรงงานทำให้มั่นคงแข็งแรง ไม่สั่นสะเทือนในขณะใช้งานคือ หน้าที่ของส่วนประกอบใด </p>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q4" value="1">
+                    <label class="form-check-label" for="radio1">แท่นเครื่อง</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q4" value="2">
+                    <label class="form-check-label" for="radio2">ฐานเครื่อง</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q4" value="3">
+                    <label class="form-check-label" for="radio3">ขาตั้ง</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q4" value="4">
+                    <label class="form-check-label" for="radio4">งแท่นรองรับชิ้นงาน </label>
+                </div>
 
-            <p class="mt-5">3. การแบ่งประเภทของเครื่องมือกลข้อใด <b class="text-danger">ไม่ถูกต้อง</b></p>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q3" value="1">
-                <label class="form-check-label" for="radio1">เครื่องเจาะ, เครื่องคว้าน</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q3" value="2">
-                <label class="form-check-label" for="radio2">เครื่องเจียระไน, เครื่องกลึง</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q3" value="3">
-                <label class="form-check-label" for="radio3">เครื่องกัดเพลานอน, เครื่องกัดเพลาตั้ง</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q3" value="4">
-                <label class="form-check-label" for="radio4">เครื่องเจียระไนลับคมตัด, เครื่องเจียระไนราบ</label>
-            </div>
+                <p class="mt-5">4.ใช้รองรับน้ำหนักของมอเตอร์และล้อหินเจียระไนคือ หน้าที่ของส่วนประกอบใด</p>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q4" value="1">
+                    <label class="form-check-label" for="radio1">แท่นรองรับชิ้นงาน</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q4" value="2">
+                    <label class="form-check-label" for="radio2">ถังบรรจุน้ำหล่อเย็น</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q4" value="3">
+                    <label class="form-check-label" for="radio3">ขาตั้ง</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q4" value="4">
+                    <label class="form-check-label" for="radio4">แท่นเครื่อง</label>
+                </div>
 
-            <p class="mt-5">4. เครื่องมือกลชนิดใดที่แปรรูปโดยให้เครื่องมือตัดเคลื่อนที่ในแนวเส้น</p>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q4" value="1">
-                <label class="form-check-label" for="radio1">เครื่องเจาะ</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q4" value="2">
-                <label class="form-check-label" for="radio2">เครื่องกลึง</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q4" value="3">
-                <label class="form-check-label" for="radio3">เครื่องเจียระไน</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q4" value="4">
-                <label class="form-check-label" for="radio4">เครื่องไส</label>
-            </div>
+                <p class="mt-5">5.ใช้รองรับชิ้นงานไม่ให้สั่นสะเทือนขณะปฏิบัติงานคือ หน้าที่ของส่วนประกอบใด </p>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q5" value="1">
+                    <label class="form-check-label" for="radio1">แท่นรองรับชิ้นงาน</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q5" value="2">
+                    <label class="form-check-label" for="radio2">ล้อหินเจียระไน </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q5" value="3">
+                    <label class="form-check-label" for="radio3">ฝาครอบล้อหินเจียระไน </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q5" value="4">
+                    <label class="form-check-label" for="radio4">สวิตช์ควบคุม</label>
+                </div>
 
-            <p class="mt-5">5. เครื่องมือกลชนิดใดที่แปรรูปโดยให้เครื่องมือตัดหมุนรอบตัวเอง แล้วเลื่อนชิ้นงานเข้าหาเครื่องมือตัด</p>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q5" value="1">
-                <label class="form-check-label" for="radio1">เครื่องกลึง</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q5" value="2">
-                <label class="form-check-label" for="radio2">เครื่องกัด</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q5" value="3">
-                <label class="form-check-label" for="radio3">เครื่องไส</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q5" value="4">
-                <label class="form-check-label" for="radio4">เครื่องเลื่อยกล</label>
-            </div>
+                <p class="mt-5">จากรูป จงตอบคำถามข้อที่ 6-9 </p>
+                <img src="postest/Q6-9.PNG" alt="pic" style="width:70%">
+                <p class="mt-5">6.หมายเลข 2 คือ อะไร</p>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q6" value="1">
+                    <label class="form-check-label" for="radio1">แท่นรองรับชิ้นงาน</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q6" value="2">
+                    <label class="form-check-label" for="radio2">ล้อหินเจียระไนชนิดเกรนละเอียด</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q6" value="3">
+                    <label class="form-check-label" for="radio3">ล้อหินเจียระไนชนิดเกรนหยาบ</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q6" value="4">
+                    <label class="form-check-label" for="radio4">ฝาครอบล้อหินเจียระไน</label>
+                </div>
 
-            <p class="mt-5">6. เครื่องเลื่อยกลแบบชักจัดอยู่ในเครื่องมือกลกลุ่มใด</p>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q6" value="1">
-                <label class="form-check-label" for="radio1">กลุ่มทำงานตัด</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q6" value="2">
-                <label class="form-check-label" for="radio2">กลุ่มทำงานขัดหรือเจียระไน</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q6" value="3">
-                <label class="form-check-label" for="radio3">กลุ่มทำงานที่ชิ้นงานหมุนรอบตัวเอง</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q6" value="4">
-                <label class="form-check-label" for="radio4">กลุ่มทำงานเจาะหรือคว้านรู</label>
-            </div>
 
-            <p class="mt-5">7. เครื่องมือกลข้อใดแตกต่างจากพวก</p>
-            <div class="d-flex flex-column flex-md-row"> <!-- แนวตั้งบนมือถือ แนวนอนบนจอใหญ่ -->
+                <p class="mt-5">7.หมายเลข 4 ทำหน้าที่อะไร</p>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="q7" value="1">
-                    <label class="form-check-label" for="radio1">
-                        <img src="pretest/7a.png" alt="ก." style="width:70%">
-                    </label>
+                    <label class="form-check-label" for="radio1">รองรับมอเตอร์</label>
                 </div>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="q7" value="2">
-                    <label class="form-check-label" for="radio2">
-                        <img src="pretest/7b.png" alt="ข." style="width:70%">
-                    </label>
+                    <label class="form-check-label" for="radio2">รองรับชิ้นงาน</label>
                 </div>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="q7" value="3">
-                    <label class="form-check-label" for="radio2">
-                        <img src="pretest/7c.png" alt="ค." style="width:70%">
-                    </label>
+                    <label class="form-check-label" for="radio3">ตัดเฉือนชิ้นงาน</label>
                 </div>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="q7" value="4">
-                    <label class="form-check-label" for="radio2">
-                        <img src="pretest/7d.png" alt="ง." style="width:70%">
-                    </label>
+                    <label class="form-check-label" for="radio4">ป้องกันอันตรายในขณะล้อหินเจียระไนหมุน</label>
                 </div>
-            </div>
 
-            <p class="mt-5">8. เครื่องมือกลกลุ่มใดมีหลักการทำงานโดยชิ้นงานจะถูกขึ้นรูปจากการสัมผัสกับส่วนที่หมุนของเครื่องมือตัด</p>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q8" value="1">
-                <label class="form-check-label" for="radio1">เครื่องกัด</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q8" value="2">
-                <label class="form-check-label" for="radio2">เครื่องกลึง</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q8" value="3">
-                <label class="form-check-label" for="radio3">เครื่องเลื่อยกลแบบชัก</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q8" value="4">
-                <label class="form-check-label" for="radio4">เครื่องเจียระไน</label>
-            </div>
+                <p class="mt-5">8.หมายเลข 8 ทำหน้าที่อะไร</p>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q8" value="1">
+                    <label class="form-check-label" for="radio1">รองรับชิ้นงาน</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q8" value="2">
+                    <label class="form-check-label" for="radio2">รองรับมอเตอร์</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q8" value="3">
+                    <label class="form-check-label" for="radio3">ป้องกันเศษเจียระไนกระเด็นเข้าตา</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q8" value="4">
+                    <label class="form-check-label" for="radio4">ป้องกันอันตรายในขณะล้อหินเจียระไนหมุน</label>
+                </div>
 
-            <p class="mt-5">9. เครื่องมือกลกลุ่มใดมีหลักการทำงานโดยให้ชิ้นงานหมุนรอบตัวเอง แล้วเลื่อนเครื่องมือตัดเข้าตัดเฉือนชิ้นงาน</p>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q9" value="1">
-                <label class="form-check-label" for="radio1">เครื่องเจาะ</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q9" value="2">
-                <label class="form-check-label" for="radio2">เครื่องกลึง</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q9" value="3">
-                <label class="form-check-label" for="radio3">เครื่องไส</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q9" value="4">
-                <label class="form-check-label" for="radio4">เครื่องกัด</label>
-            </div>
+                <p class="mt-5">9.หมายเลขใดทำหน้าที่ตัดเฉือนชิ้นงาน </p>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q9" value="1">
+                    <label class="form-check-label" for="radio1">หมายเลข 1 </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q9" value="2">
+                    <label class="form-check-label" for="radio2">หมายเลข 2 </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q9" value="3">
+                    <label class="form-check-label" for="radio3">หมายเลข 5 </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q9" value="4">
+                    <label class="form-check-label" for="radio4">หมายเลข 6 </label>
+                </div>
 
-            <p class="mt-5">10. เครื่องมือกลกลุ่มใดมีหลักการทำงานโดยชิ้นงานถูกจับยึดแน่นกับที่ ส่วนเครื่องมือตัดหมุนรอบตัวเองและเคลื่อนที่ในแนวเส้นตรงเข้าตัดเฉือนชิ้นงาน</p>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q10" value="1">
-                <label class="form-check-label" for="radio1">เครื่องเจาะ</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q10" value="2">
-                <label class="form-check-label" for="radio2">เครื่องกลึง</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q10" value="3">
-                <label class="form-check-label" for="radio3">เครื่องไส</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q10" value="4">
-                <label class="form-check-label" for="radio4">เครื่องเจียระไน</label>
-            </div>
+                <p class="mt-5">10.ข้อใด ไม่ใช่ จุดมุ่งหมายในการแต่งหน้าล้อหินเจียระไน
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q10" value="1">
+                    <label class="form-check-label" for="radio1">เพื่อทำให้ล้อหินเจียระไนทำให้เกิดคมตัดใหม่ขึ้น </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q10" value="2">
+                    <label class="form-check-label" for="radio2">เพื่อขยายช่องลับเศษโลหะของล้อหินเจียระไน</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q10" value="3">
+                    <label class="form-check-label" for="radio3">เพื่อลบรอยร้าวของล้อหินเจียระไน</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q10" value="4">
+                    <label class="form-check-label" for="radio4">เพื่อทำให้หน้าล้อหินเจียระไนได้รูปพรรณและขนาดอยู่ในพิกัด</label>
+                </div>
 
-            <p class="mt-5">11. เครื่องมือกลข้อใดแตกต่างจากพวก</p>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q11" value="1">
-                <label class="form-check-label" for="radio1"><img src="pretest/11a.png" alt="ก." style="width:70%"></label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q11" value="2">
-                <label class="form-check-label" for="radio2"><img src="pretest/11b.png" alt="ข." style="width:70%"></label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q11" value="3">
-                <label class="form-check-label" for="radio3"><img src="pretest/11c.png" alt="ค." style="width:70%"></label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q11" value="4">
-                <label class="form-check-label" for="radio4"><img src="pretest/11d.png" alt="ง." style="width:70%"></label>
-            </div>
+                <p class="mt-5">11.อุปกรณ์ในข้อใดใช้วัดมุมเกลียวยอดแหลมมุม 60องศา</p>
+                <div class="d-flex flex-column flex-md-row"> <!-- แนวตั้งบนมือถือ แนวนอนบนจอใหญ่ -->
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="q11" value="1">
+                        <label class="form-check-label" for="radio1">
+                            <img src="postest/Q11A.PNG" alt="pic" style="width:70%">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="q11" value="2">
+                        <label class="form-check-label" for="radio2">
+                            <img src="postest/Q11B.PNG" alt="pic" style="width:70%">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="q11" value="3">
+                        <label class="form-check-label" for="radio2">
+                            <img src="postest/Q11C.PNG" alt="pic" style="width:70%">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="q11" value="4">
+                        <label class="form-check-label" for="radio2">
+                            <img src="postest/Q11D.PNG" alt="pic" style="width:70%">
+                        </label>
+                    </div>
+                </div>
 
-            <p class="mt-5">12. เครื่องมือกลกลุ่มใดที่เครื่องมือตัดเคลื่อนที่ไป-กลับในแนวเส้นตรง แล้วเลื่อนชิ้นงานเข้าหาเครื่องมือตัด</p>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q12" value="1">
-                <label class="form-check-label" for="radio1">เครื่องไส</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q12" value="2">
-                <label class="form-check-label" for="radio2">เครื่องกลึง</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q12" value="3">
-                <label class="form-check-label" for="radio3">เครื่องเจาะ</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q12" value="4">
-                <label class="form-check-label" for="radio4">เครื่องกัด</label>
-            </div>
+                <p class="mt-5">12. เครื่องมือในข้อใดใช้วัดวัดมุมเกลียวสี่เหลี่ยมคางหมูอเมริกัน (Acme Thread Gauge)</p>
+                <div class="d-flex flex-column flex-md-row"> <!-- แนวตั้งบนมือถือ แนวนอนบนจอใหญ่ -->
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="q12" value="1">
+                        <label class="form-check-label" for="radio1">
+                            <img src="postest/Q12A.PNG" alt="pic" style="width:70%">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="q12" value="2">
+                        <label class="form-check-label" for="radio2">
+                            <img src="postest/Q12B.PNG" alt="pic" style="width:70%">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="q12" value="3">
+                        <label class="form-check-label" for="radio2">
+                            <img src="postest/Q12C.PNG" alt="pic" style="width:70%">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="q12" value="4">
+                        <label class="form-check-label" for="radio2">
+                            <img src="postest/Q12D.PNG" alt="pic" style="width:70%">
+                        </label>
+                    </div>
+                </div>
 
-            <p class="mt-5">13. เครื่องมือกลข้อใดจัดอยู่ในกลุ่มที่จับยึดชิ้นงานอยู่กับที่ แล้วเลื่อนชิ้นงานเข้าหาเครื่องมือตัดที่หมุนรอบตัวเองเพื่อทำการตัดเฉือน</p>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q13" value="1">
-                <label class="form-check-label" for="radio1"><img src="pretest/13a.png" alt="ก." style="width:70%"></label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q13" value="2">
-                <label class="form-check-label" for="radio2"><img src="pretest/13b.png" alt="ข." style="width:70%"></label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q13" value="3">
-                <label class="form-check-label" for="radio3"><img src="pretest/13c.png" alt="ค." style="width:70%"></label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q13" value="4">
-                <label class="form-check-label" for="radio4"><img src="pretest/13d.png" alt="ง." style="width:70%"></label>
-            </div>
+                <p class="mt-5">13.เครื่องมือในข้อใดใช้วัดมุมดอกสว่านเท่านั้น </p>
+                <div class="d-flex flex-column flex-md-row"> <!-- แนวตั้งบนมือถือ แนวนอนบนจอใหญ่ -->
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="q13" value="1">
+                        <label class="form-check-label" for="radio1">
+                            <img src="postest/Q13A.PNG" alt="pic" style="width:70%">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="q13" value="2">
+                        <label class="form-check-label" for="radio2">
+                            <img src="postest/Q13B.PNG" alt="pic" style="width:70%">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="q13" value="3">
+                        <label class="form-check-label" for="radio2">
+                            <img src="postest/Q13C.PNG" alt="pic" style="width:70%">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="q13" value="4">
+                        <label class="form-check-label" for="radio2">
+                            <img src="postest/Q13D.PNG" alt="pic" style="width:70%">
+                        </label>
+                    </div>
+                </div>
 
-            <p class="mt-5">14. เครื่องมือกลกลุ่มใดควบคุมการทำงานด้วยคอมพิวเตอร์</p>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q14" value="1">
-                <label class="form-check-label" for="radio1">เครื่องเจียระไนลับคมตัด</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q14" value="2">
-                <label class="form-check-label" for="radio2">เครื่องไสช่วงสั้น</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q14" value="3">
-                <label class="form-check-label" for="radio3">เครื่องกลึงซีเอ็นซี</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="q14" value="4">
-                <label class="form-check-label" for="radio4">เครื่องเจาะรัศมี</label>
-            </div>
+                <p class="mt-5">14.แท่นรองรับชิ้นงานควรปรับให้มีระยะห่างจากขอบหน้าล้อหินเจียระไนเท่าใด </p>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q14" value="1">
+                    <label class="form-check-label" for="radio1">ประมาณ 1-2 มิลลิเมตร</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q14" value="2">
+                    <label class="form-check-label" for="radio2">เท่ากับความหนาของล้อหินเจียระไน</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q14" value="3">
+                    <label class="form-check-label" for="radio3">เท่ากับความหนาของชิ้นงาน </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q14" value="4">
+                    <label class="form-check-label" for="radio4">ประมาณ 3-5 มิลลิเมตร</label>
+                </div>
 
-            <div class="d-flex justify-content-center mt-5">
-                <button type="button" class="btn navy text-white mt-3" id="checkAnswers">ยืนยัน</button>
-            </div>
+                <p class="mt-5">15.ข้อใด ไม่ใช่ วิธีการบำรุงรักษาเครื่องเจียระไนลับคมตัด </p>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q15" value="1">
+                    <label class="form-check-label" for="radio1">ตรวจสอบการทำงานของมอเตอร์ก่อนใช้งาน</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q15" value="2">
+                    <label class="form-check-label" for="radio2">ตรวจสอบความสมบูรณ์ของล้อหินเจียระไนก่อนใช้งาน </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q15" value="3">
+                    <label class="form-check-label" for="radio3">ทำความสะอาดเครื่องเจียระไนหลังใช้งาน</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="q15" value="4">
+                    <label class="form-check-label" for="radio4">ตรวจสอบระบบไฟฟ้าหลังใช้งานทุกครั้ง</label>
+                </div>
+
+                <div class="d-flex justify-content-center mt-5">
+                    <button type="button" class="btn navy text-white mt-3" id="checkAnswers">ยืนยัน</button>
+                </div>
         </form>
     </div>
     </div>

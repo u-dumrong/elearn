@@ -78,7 +78,8 @@ require "../../session.php";
         <h2 class="text-danger text-center">บทที่ 3. เครื่องเลื่อยกล</h2>
         <p><b class="text-danger">คำชี้แจง :</b> จงเลือกคำตอบข้อที่ถูกต้องที่สุดเพียงคำตอบเดียว (25 คะแนน)</p>
         <form id="quizForm">
-        <p class="mt-5">1. จากรูป คือ เครื่องเลื่อยกลชนิดใด</p>
+            <p class="mt-5">1. จากรูป คือ เครื่องเลื่อยกลชนิดใด</p>
+            <img src="pretest/Q1.PNG" alt="pic" style="width:70%">
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q1" value="1">
                 <label class="form-check-label" for="radio1">เครื่องเลื่อยกลสายพานแนวนอน</label>
@@ -133,6 +134,7 @@ require "../../session.php";
             </div>
 
             <p class="mt-5">4. อุปกรณ์ในรูปทำหน้าที่อะไร</p>
+            <img src="pretest/Q4.PNG" alt="pic" style="width:60%">
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q4" value="1">
                 <label class="form-check-label" for="radio1">จับยึดชิ้นงาน</label>
@@ -191,25 +193,25 @@ require "../../session.php";
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="q7" value="1">
                     <label class="form-check-label" for="radio1">
-                    เครื่องเลื่อยกลสายพานแนวตั้ง
+                        เครื่องเลื่อยกลสายพานแนวตั้ง
                     </label>
                 </div>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="q7" value="2">
                     <label class="form-check-label" for="radio2">
-                    เครื่องเลื่อยวงเดือน
+                        เครื่องเลื่อยวงเดือน
                     </label>
                 </div>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="q7" value="3">
                     <label class="form-check-label" for="radio2">
-                    เครื่องเลื่อยกลแบบชัก
+                        เครื่องเลื่อยกลแบบชัก
                     </label>
                 </div>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="q7" value="4">
                     <label class="form-check-label" for="radio2">
-                    เครื่องเลื่อยกลสายพานแนวนอน
+                        เครื่องเลื่อยกลสายพานแนวนอน
                     </label>
                 </div>
             </div>
@@ -250,7 +252,7 @@ require "../../session.php";
                 <label class="form-check-label" for="radio4">แท่นรองรับชิ้นงาน</label>
             </div>
 
-            <p class="mt-5">10. จากรูปหมายเลข 1 คือ อะไร<br><img src="pretest/10q.png" alt="ก." style="width:70%"></p>
+            <p class="mt-5">10. จากรูปหมายเลข 1 คือ อะไร<br><img src="pretest/Q10.PNG" alt="ก." style="width:70%"></p>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q10" value="1">
                 <label class="form-check-label" for="radio1">ความหนา</label>
@@ -269,6 +271,7 @@ require "../../session.php";
             </div>
 
             <p class="mt-5">จากรูป จงใช้ตอบคำถามข้อ 11-12</p>
+            <img src="pretest/Q11.PNG" alt="pic" style="width:70%">
             <p class="mt-5">11. หมายเลข 1 คือมุมอะไรของใบเลื่อยกลชัก</p>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q11" value="1">
@@ -308,40 +311,40 @@ require "../../session.php";
             <p class="mt-5">13. ข้อใด คือ การจัดเรียงฟันใบเลื่อยแบบฟันสลับฟันเอียงซ้ายและฟันเอียงขวา</p>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q13" value="1">
-                <label class="form-check-label" for="radio1"></label>
+                <label class="form-check-label" for="radio1"><img src="pretest/Q13A.PNG" alt="pic" style="width:70%"></label>
             </div>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q13" value="2">
-                <label class="form-check-label" for="radio2"><img src="pretest/25a.png" alt="ก." style="width:70%"></label>
+                <label class="form-check-label" for="radio2"><img src="pretest/Q13B.PNG" alt="pic" style="width:70%"></label>
             </div>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q13" value="3">
-                <label class="form-check-label" for="radio3"></label>
+                <label class="form-check-label" for="radio3"><img src="pretest/Q13C.PNG" alt="pic" style="width:70%"></label>
             </div>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q13" value="4">
-                <label class="form-check-label" for="radio4"></label>
+                <label class="form-check-label" for="radio4"><img src="pretest/Q13D.PNG" alt="pic" style="width:70%"></label>
             </div>
 
             <p class="mt-5">14. ข้อใด คือ การจัดเรียงฟันใบเลื่อยแบบชุดฟันเอียงซ้ายสลับชุดฟันเอียงขวา</p>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q14" value="1">
-                <label class="form-check-label" for="radio1"></label>
+                <label class="form-check-label" for="radio1"><img src="pretest/Q14A.PNG" alt="pic" style="width:60%"></label>
             </div>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q14" value="2">
-                <label class="form-check-label" for="radio2"></label>
+                <label class="form-check-label" for="radio2"><img src="pretest/Q14B.PNG" alt="pic" style="width:60%"></label>
             </div>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q14" value="3">
-                <label class="form-check-label" for="radio3"></label>
+                <label class="form-check-label" for="radio3"><img src="pretest/Q14C.PNG" alt="pic" style="width:60%"></label>
             </div>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q14" value="4">
-                <label class="form-check-label" for="radio4"></label>
+                <label class="form-check-label" for="radio4"><img src="pretest/Q14D.PNG" alt="pic" style="width:60%"></label>
             </div>
 
-            <p class="mt-5">15. จากรูปใบเลื่อยมีระยะพิตช์เท่าใด<br><img src="pretest/15q.png" alt="ง." style="width:70%"></p>
+            <p class="mt-5">15. จากรูปใบเลื่อยมีระยะพิตช์เท่าใด<br><img src="pretest/Q15.PNG" alt="ง." style="width:70%"></p>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q15" value="1">
                 <label class="form-check-label" for="radio1">7 ฟันต่อนิ้ว</label>
@@ -488,40 +491,41 @@ require "../../session.php";
             <p class="mt-5">23.ข้อใดจับยึดชิ้นงาน ไม่ถูกต้อง</p>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q23" value="1">
-                <label class="form-check-label" for="radio1"><img src="pretest/23q.png" alt="ง." style="width:70%"></label>
+                <label class="form-check-label" for="radio1"><img src="pretest/Q23A.PNG" alt="pic" style="width:70%"></label>
             </div>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q23" value="2">
-                <label class="form-check-label" for="radio2"><img src="pretest/23q.png" alt="ง." style="width:70%"></label>
+                <label class="form-check-label" for="radio2"><img src="pretest/Q23B.PNG" alt="pic" style="width:70%"></label>
             </div>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q23" value="3">
-                <label class="form-check-label" for="radio3"><img src="pretest/23q.png" alt="ง." style="width:70%"></label>
+                <label class="form-check-label" for="radio3"><img src="pretest/Q23C.PNG" alt="pic" style="width:70%"></label>
             </div>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q23" value="4">
-                <label class="form-check-label" for="radio4"><img src="pretest/23q.png" alt="ง." style="width:70%"></label>
+                <label class="form-check-label" for="radio4"><img src="pretest/Q23D.PNG" alt="pic" style="width:70%"></label>
             </div>
 
-            <p class="mt-5">ข้อใดจับยึดชิ้นงาน ได้ถูกต้อง<br><img src="pretest/24q.png" alt="ง." style="width:70%"></p>
+            <p class="mt-5">24. ข้อใดจับยึดชิ้นงาน ได้ถูกต้อง</p>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q24" value="1">
-                <label class="form-check-label" for="radio1"></label>
+                <label class="form-check-label" for="radio1"><img src="pretest/Q24A.PNG" alt="pic" style="width:70%"></label>
             </div>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q24" value="2">
-                <label class="form-check-label" for="radio2"></label>
+                <label class="form-check-label" for="radio2"><img src="pretest/Q24B.PNG" alt="pic" style="width:70%"></label>
             </div>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q24" value="3">
-                <label class="form-check-label" for="radio3"></label>
+                <label class="form-check-label" for="radio3"><img src="pretest/Q24C.PNG" alt="pic" style="width:70%"></label>
             </div>
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q24" value="4">
-                <label class="form-check-label" for="radio4"></label>
+                <label class="form-check-label" for="radio4"><img src="pretest/Q24D.PNG" alt="pic" style="width:70%"></label>
             </div>
 
             <p class="mt-5">25. จากรูปความยาวของใบเลื่อยสายพานแนวตั้งมีค่าเท่าใด</p>
+            <img src="pretest/Q25.PNG" alt="pic" style="width:60%">
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="q25" value="1">
                 <label class="form-check-label" for="radio1">4,927 มิลลิเมตร</label>

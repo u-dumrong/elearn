@@ -1,19 +1,19 @@
 document.getElementById('checkAnswers').addEventListener('click', function () {
     const correctAnswers = {
-        q1: "3",
-        q2: "4",
+        q1: "1",
+        q2: "3",
         q3: "2",
         q4: "4",
         q5: "2",
         q6: "1",
-        q7: "2",
+        q7: "4",
         q8: "4",
-        q9: "2",
-        q10: "1",
-        q11: "4",
-        q12: "1",
-        q13: "4",
-        q14: "3"
+        q9: "3",
+        q10: "3",
+        q11: "1",
+        q12: "2",
+        q13: "1",
+        q14: "2"
     };
 
     const form = document.getElementById("quizForm");

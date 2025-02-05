@@ -1,30 +1,20 @@
 document.getElementById('checkAnswers').addEventListener('click', function () {
     const correctAnswers = {
-        q1: "2",
-        q2: "1",
-        q3: "3",
-        q4: "1",
+        q1: "1",
+        q2: "4",
+        q3: "1",
+        q4: "2",
         q5: "4",
-        q6: "4",
-        q7: "3",
-        q8: "2",
+        q6: "2",
+        q7: "1",
+        q8: "4",
         q9: "2",
         q10: "3",
-        q11: "4",
-        q12: "3",
-        q13: "4",
-        q14: "2",
-        q15: "1",
-        q16: "3",
-        q17: "3",
-        q18: "4",
-        q19: "1",
-        q20: "3",
-        q21: "2",
-        q22: "3",
-        q23: "3",
-        q24: "2",
-        q25: "2"
+        q11: "3",
+        q12: "1",
+        q13: "3",
+        q14: "3",
+        q15: "2"
     };
 
     const form = document.getElementById("quizForm");
