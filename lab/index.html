@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Sound</title>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div class="audio-player"><!-- Audio element ที่จะใช้เล่นไฟล์เสียง -->
+        <audio id="audioPlayer" controls preload="auto">
+            <source src="../voice/output5.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        // ฟังก์ชันที่ใช้เล่นเสียงเมื่อคลิกปุ่ม
+        function playSound() {
+            var audio = document.getElementById("audioPlayer");
+            audio.play(); // เล่นเสียง
+        }
+    </script>
+</body>
+
+</html>

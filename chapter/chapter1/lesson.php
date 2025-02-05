@@ -59,12 +59,11 @@ $conn->close();
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#demo">เมนู</a>
                 </li>
-            </ul>
-
-            <ul class="navbar-nav justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link" href="logout.php">Logout</a>
-                </li>
+                <!-- Audio element ที่จะใช้เล่นไฟล์เสียง -->
+                <audio id="audioPlayer" controls preload="auto">
+                    <source src="../../voice/chapter1.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
             </ul>
         </div>
     </nav>
@@ -152,6 +151,12 @@ $conn->close();
                 window.location.href = "../../student.php";
             }
         });
+
+        // ฟังก์ชันที่ใช้เล่นเสียงเมื่อคลิกปุ่ม
+        function playSound() {
+            var audio = document.getElementById("audioPlayer");
+            audio.play(); // เล่นเสียง
+        }
     </script>
 </body>
 

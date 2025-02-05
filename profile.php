@@ -131,7 +131,6 @@ $conn->close();
             <div class="card-body">
                 <p class="card-text"><strong>ชื่อผู้ใช้:</strong> <?php echo htmlspecialchars($username); ?></p>
                 <p class="card-text"><strong>อีเมล:</strong> <?php echo htmlspecialchars($email); ?></p>
-                <p class="card-text"><strong>สถานะ:</strong> <?php echo htmlspecialchars($role === 'student' ? 'นักศึกษา' : 'ครู'); ?></p>
 
                 <?php if ($role === 'student'): ?>
                     <p class="card-text"><strong>คะแนนล่าสุด:</strong></p>
@@ -152,6 +151,7 @@ $conn->close();
                 <?php elseif ($role === 'teacher'): ?>
                     <p class="card-text"><strong>แผนก:</strong> <?php echo htmlspecialchars($department); ?></p>
                 <?php endif; ?>
+                <a href='editPro.php' class="btn navy text-white">แก้ไขโปรไฟล์</a>
                 <a href='logout.php' class="btn btn-danger">ลงชื่อออก</a>
             </div>
         </div>

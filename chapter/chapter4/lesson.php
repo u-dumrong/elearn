@@ -1,5 +1,32 @@
 <?php
 require "../../session.php";
+
+// เชื่อมต่อฐานข้อมูล
+require '../../dbConfig.php'; // ไฟล์สำหรับเชื่อมต่อฐานข้อมูล
+
+// ตรวจสอบว่า user_id อยู่ใน session หรือไม่
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+
+    // ดึงข้อมูล role จากฐานข้อมูล
+    $stmt = $conn->prepare("SELECT role FROM users WHERE id = ?");
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $role = $row['role'];
+    } else {
+        $role = 'student'; // กำหนดค่าเริ่มต้นในกรณีที่ไม่พบข้อมูล
+    }
+
+    $stmt->close();
+} else {
+    $role = 'student'; // กรณีไม่มี session กำหนดค่าเริ่มต้นเป็น student
+}
+
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -27,17 +54,16 @@ require "../../session.php";
         <div class="container-fluid">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="../../student.php">หน้าแรก</a>
+                    <a id="navLink" class="nav-link" href="#">หน้าแรก</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#demo">เมนู</a>
                 </li>
-            </ul>
-
-            <ul class="navbar-nav justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link" href="logout.php">Logout</a>
-                </li>
+                <!-- Audio element ที่จะใช้เล่นไฟล์เสียง -->
+                <audio id="audioPlayer" controls preload="auto">
+                    <source src="../../voice/chapter4.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
             </ul>
         </div>
     </nav>
@@ -111,6 +137,26 @@ require "../../session.php";
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let data = {
+            role: '<?php echo $role; ?>' // ส่งค่าจาก PHP ไปยัง JavaScript
+        };
+
+        document.getElementById("navLink").addEventListener("click", function(event) {
+            event.preventDefault(); // ป้องกันการเปิดลิงก์ก่อนกำหนด
+            if (data.role === 'teacher') {
+                window.location.href = "../../teacher.php";
+            } else if (data.role === 'student') {
+                window.location.href = "../../student.php";
+            }
+        });
+
+        // ฟังก์ชันที่ใช้เล่นเสียงเมื่อคลิกปุ่ม
+        function playSound() {
+            var audio = document.getElementById("audioPlayer");
+            audio.play(); // เล่นเสียง
+        }
+    </script>
 </body>
 
 </html>
