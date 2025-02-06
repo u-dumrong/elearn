@@ -18,6 +18,25 @@ $stmt->bind_result($username, $email, $role, $profile_picture);
 $stmt->fetch();
 $stmt->close();
 
+if ($role === 'teacher') {
+    $stmt = $conn->prepare("SELECT department FROM teachers WHERE user_id = ?");
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $stmt->bind_result($department);
+    $stmt->fetch();
+    $stmt->close();
+}
+
+if ($role === 'teacher' && isset($_POST['department'])) {
+    $new_department = trim($_POST['department']);
+
+    // อัปเดต department ในฐานข้อมูล
+    $stmt = $conn->prepare("UPDATE teachers SET department = ? WHERE user_id = ?");
+    $stmt->bind_param("si", $new_department, $user_id);
+    $stmt->execute();
+    $stmt->close();
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // เช็คการอัปเดตชื่อและอีเมล
     $new_username = trim($_POST['username']);
@@ -109,6 +128,13 @@ $conn->close();
                         <input type="email" name="email" class="form-control" value="<?php echo htmlspecialchars($email); ?>" placeholder="กรอกอีเมล" required>
                     </div>
 
+                    <?php if ($role === 'teacher'): ?>
+                        <div class="mb-3">
+                        <label for="department" class="form-label"><b>แผนก:</b></label>
+                        <input type="text" name="department" class="form-control" value="<?php echo htmlspecialchars($department); ?>" placeholder="กรอกแผนก" required>
+                    </div>
+                    <?php endif; ?>
+
                     <div class="mb-3">
                         <label for="file" class="btn btn-warning w-100">เลือกรูปภาพ</label>
                         <input type="file" name="profile_picture" accept="image/*" id="file" class="custom-file-input">
@@ -117,9 +143,6 @@ $conn->close();
                     <button type="submit" class="btn navy text-white w-100">ตกลง</button>
                 </form>
 
-                <?php if ($role === 'teacher'): ?>
-                    <p class="card-text"><strong>แผนก:</strong> <?php echo htmlspecialchars($department); ?></p>
-                <?php endif; ?>
             </div>
         </div>
     </div>
