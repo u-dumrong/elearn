@@ -27,12 +27,31 @@ if ($role === 'teacher') {
     $stmt->close();
 }
 
+if ($role === 'student') {
+    $stmt = $conn->prepare("SELECT student_group FROM students WHERE user_id = ?");
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $stmt->bind_result($student_group);
+    $stmt->fetch();
+    $stmt->close();
+}
+
 if ($role === 'teacher' && isset($_POST['department'])) {
     $new_department = trim($_POST['department']);
 
     // อัปเดต department ในฐานข้อมูล
     $stmt = $conn->prepare("UPDATE teachers SET department = ? WHERE user_id = ?");
     $stmt->bind_param("si", $new_department, $user_id);
+    $stmt->execute();
+    $stmt->close();
+}
+
+if ($role === 'student' && isset($_POST['student_group'])) {
+    $new_group = intval($_POST['student_group']); // แปลงค่าให้เป็นตัวเลขเพื่อความปลอดภัย
+
+    // อัปเดต student_group ในฐานข้อมูล
+    $stmt = $conn->prepare("UPDATE students SET student_group = ? WHERE user_id = ?");
+    $stmt->bind_param("ii", $new_group, $user_id);
     $stmt->execute();
     $stmt->close();
 }
@@ -107,11 +126,7 @@ $conn->close();
     <!-- เนื้อหา -->
     <div class="d-flex justify-content-center align-items-center mt-5">
         <div class="card" style="width:400px">
-            <?php if ($profile_picture): ?>
-                <img class="card-img-top" src="uploads/<?php echo htmlspecialchars($profile_picture); ?>" alt="Profile Picture" style="width:100%">
-            <?php else: ?>
-                <p>ยังไม่มีรูปโปรไฟล์</p>
-            <?php endif; ?>
+            <img class="card-img-top" src="uploads/<?php echo htmlspecialchars(!empty($profile_picture) ? $profile_picture : 'who.png'); ?>" alt="Profile Picture" style="width:100%">
             </p>
             <?php if (isset($error_message)): ?>
                 <p style="color:red;"><?php echo htmlspecialchars($error_message); ?></p>
@@ -130,10 +145,18 @@ $conn->close();
 
                     <?php if ($role === 'teacher'): ?>
                         <div class="mb-3">
-                        <label for="department" class="form-label"><b>แผนก:</b></label>
-                        <input type="text" name="department" class="form-control" value="<?php echo htmlspecialchars($department); ?>" placeholder="กรอกแผนก" required>
-                    </div>
+                            <label for="department" class="form-label"><b>แผนก:</b></label>
+                            <input type="text" name="department" class="form-control" value="<?php echo htmlspecialchars($department); ?>" placeholder="กรอกแผนก" required>
+                        </div>
                     <?php endif; ?>
+
+                    <?php if ($role === 'student'): ?>
+                        <div class="mb-3">
+                            <label for="student_group" class="form-label"><b>กลุ่มนักเรียน:</b></label>
+                            <input type="number" name="student_group" class="form-control" value="<?php echo htmlspecialchars($student_group); ?>" placeholder="กรอกหมายเลขกลุ่ม" required>
+                        </div>
+                    <?php endif; ?>
+
 
                     <div class="mb-3">
                         <label for="file" class="btn btn-warning w-100">เลือกรูปภาพ</label>

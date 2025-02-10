@@ -28,12 +28,20 @@ if (isset($_SESSION['user_id'])) {
 $pre = isset($_GET['pre']) ? $_GET['pre'] : 'pre1';
 $pos = isset($_GET['pos']) ? $_GET['pos'] : 'pos1';
 $view_all = isset($_GET['view_all']);
+$view_all2 = isset($_GET['view_all2']);
 
-$sql = $view_all ? "SELECT u.username, u.profile_picture, s.pre1, s.pos1, s.pre2, s.pos2, 
-s.pre3, s.pos3, s.pre4, s.pos4, s.pre5, s.pos5, s.pre6, s.pos6, s.pre7, s.pos7, s.total_score 
-FROM users u JOIN students s ON u.id = s.user_id WHERE u.role = 'student'" :
-    "SELECT u.username, u.profile_picture, s.$pre, s.$pos, s.total_score 
+// ส่วนของ PHP ที่มีการบันทึกค่าของกลุ่มที่เลือก
+$group = isset($_GET['group']) ? intval($_GET['group']) : (isset($_SESSION['selected_group']) ? $_SESSION['selected_group'] : 1);
+$_SESSION['selected_group'] = $group;  // บันทึกค่าใน session
+
+$sql = "SELECT u.username, u.profile_picture, s.student_group, s.pre1, s.pos1, s.pre2, s.pos2, 
+s.pre3, s.pos3, s.pre4, s.pos4, s.pre5, s.pos5, s.pre6, s.pos6, s.pre7, s.pos7, s.total_score, s.total_score2 
 FROM users u JOIN students s ON u.id = s.user_id WHERE u.role = 'student'";
+
+if ($group) {
+    $sql .= " AND s.student_group = $group"; // กรองตามกลุ่ม
+}
+
 $result = $conn->query($sql);
 
 $conn->close();
@@ -60,20 +68,23 @@ $conn->close();
     <div class="bg bg3"></div>
 
     <!-- แถบนำทาง -->
-    <nav class="navbar navbar-expand bg-dark navbar-dark fixed-top">
+    <nav class="navbar navbar-expand bg-light navbar-light fixed-top">
         <div class="container-fluid">
-            <ul class="navbar-nav">
+            <a class="navbar-brand" href="teacher.php">
+                <h4><img src="logo.png" alt="Logo" style="width:40px;">ทฤษฎีเครื่องมือกล</h4>
+            </a>
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a id="navLink" class="nav-link" href="#">หน้าแรก</a>
+                    <a class="nav-link active" href="teacher.php">หน้าแรก</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" data-bs-toggle="offcanvas" data-bs-target="#demo">เมนู</a>
                 </li>
-            </ul>
-
-            <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link active" href="profile.php">โปรไฟล์</a>
+                    <form method="GET" class="mt-2">
+                        <input type="number" id="groupInput" name="group" min="1" placeholder="เลือกกลุ่ม" required>
+                        <button type="submit" class="btn btn-warning">ดูนักเรียน</button>
+                    </form>
                 </li>
             </ul>
         </div>
@@ -86,17 +97,26 @@ $conn->close();
     </div>
 
     <!-- แถบเมนูทางซ้าย -->
-    <div class="offcanvas offcanvas-start text-bg-dark" id="demo">
+    <div class="offcanvas offcanvas-end text-bg-dark" id="demo">
         <div class="offcanvas-header">
             <h1 class="offcanvas-title">เมนู</h1>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body">
+            <button type="button" class="btn btn-warning m-1">
+                <a class=" nav-link active" href="profile.php">โปรไฟล์</a>
+            </button>
+            <button type="button" class="btn btn-warning m-1">
+                <a class="nav-link active" href="score.php">รายชื่อนักเรียน</a>
+            </button>
+            <hr>
             <?php
+            $lessons = array("ความรู้เบื้องต้นเกี่ยวกับเครื่องมือกล", "เครื่องมือกลขนาดเล็ก", "เครื่องเลื่อยกล", "เครื่องจักร", "เครื่องกลึง", "เครื่องกัด", "เครื่องเจียรไน");
+
             for ($i = 1; $i <= 7; $i++) {
-                echo '<div class="dropdown dropend p-1">';
+                echo '<div class="dropdown p-1">';
                 echo '<button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">';
-                echo 'บทที่ ' . $i;
+                echo 'บทที่ ' . $i . " " . $lessons[$i - 1];
                 echo '</button>';
                 echo '<ul class="dropdown-menu">';
                 echo '<li><a class="dropdown-item" href="chapter/chapter' . $i . '/pretest.php">แบบทดสอบก่อนเรียน</a></li>';
@@ -106,41 +126,46 @@ $conn->close();
                 echo '</div>';
             }
             ?>
+            <hr>
+            <a href='logout.php' class="btn btn-danger m-1">ลงชื่อออก</a>
         </div>
     </div>
 
     <!-- เนื้อหา -->
     <div class="btn-group btn-group-md mt-1">
-        <?php for ($i = 1; $i <= 7; $i++): if ($i % 2 != 0) { ?>
-                <a type="button" class="btn btn-warning" href="?pre=pre<?= $i; ?>&pos=pos<?= $i; ?>">
-                    ดู Pre<?= $i; ?> และ Pos<?= $i; ?>
-                </a>
-            <?php } else { ?>
-                <a type="button" class="btn navy text-white" href="?pre=pre<?= $i; ?>&pos=pos<?= $i; ?>">
-                    ดู Pre<?= $i; ?> และ Pos<?= $i; ?>
-                </a>
-        <?php }
-        endfor; ?>
-        <a type="button" class="btn navy text-white" href="?view_all=true">
-            ดูทุกบทและ Total Score
+        <?php for ($i = 1; $i <= 7; $i++): ?>
+            <a id="btn<?= $i; ?>" type="button" class="btn <?= ($i % 2 != 0) ? 'btn-warning' : 'btn-dark'; ?>" href="?pre=pre<?= $i; ?>&pos=pos<?= $i; ?>" onclick="setActiveButton(event, 'btn<?= $i; ?>')">
+                ดูคะแนนสอบบทที่ <?= $i; ?>
+            </a>
+        <?php endfor; ?>
+        <a id="view_all" type="button" class="btn btn-dark" href="?view_all=true" onclick="setActiveButton(event, 'view_all')">
+            ดูคะแนนสอบก่อนเรียนทุกบท
+        </a>
+        <a id="view_all2" type="button" class="btn btn-warning" href="?view_all2=true" onclick="setActiveButton(event, 'view_all2')">
+            ดูคะแนนสอบหลังเรียนทุกบท
         </a>
     </div>
 
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Profile Picture</th>
-                <th>Username</th>
+                <th>รูป</th>
+                <th>ชื่อ</th>
+                <th>กลุ่มที่</th>
                 <?php if ($view_all): ?>
                     <?php for ($i = 1; $i <= 7; $i++): ?>
-                        <th>Pre<?= $i; ?></th>
-                        <th>Pos<?= $i; ?></th>
+                        <th>บทที่ <?= $i; ?></th>
                     <?php endfor; ?>
+                    <th>รวม</th>
+                <?php elseif ($view_all2): ?>
+                    <?php for ($i = 1; $i <= 7; $i++): ?>
+                        <th>บทที่ <?= $i; ?></th>
+                    <?php endfor; ?>
+                    <th>รวม</th>
                 <?php else: ?>
                     <th>ก่อนเรียน</th>
                     <th>หลังเรียน</th>
                 <?php endif; ?>
-                <th>Total Score</th>
             </tr>
         </thead>
         <tbody>
@@ -148,22 +173,26 @@ $conn->close();
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
-                    echo "<td><img src='uploads/" . $row['profile_picture'] . "' alt='Profile Picture' width='100'></td>";
+                    $profile_picture = !empty($row['profile_picture']) ? $row['profile_picture'] : 'who.png';
+                    echo "<td><img src='uploads/" . $profile_picture . "' alt='Profile Picture' width='100'></td>";
                     echo "<td>" . $row['username'] . "</td>";
+                    echo "<td>" . $row['student_group'] . "</td>";
                     if ($view_all) {
                         for ($i = 1; $i <= 7; $i++) {
                             echo "<td>" . $row['pre' . $i] . "</td>";
+                        }
+                        echo "<td>" . $row['total_score'] . "</td>";
+                    } elseif ($view_all2) {
+                        for ($i = 1; $i <= 7; $i++) {
                             echo "<td>" . $row['pos' . $i] . "</td>";
                         }
+                        echo "<td>" . $row['total_score2'] . "</td>";
                     } else {
                         echo "<td>" . $row[$pre] . "</td>";
                         echo "<td>" . $row[$pos] . "</td>";
                     }
-                    echo "<td>" . $row['total_score'] . "</td>";
                     echo "</tr>";
                 }
-            } else {
-                echo "<tr><td colspan='4'>No data found</td></tr>";
             }
             ?>
         </tbody>
@@ -180,14 +209,31 @@ $conn->close();
             role: '<?php echo $role; ?>' // ส่งค่าจาก PHP ไปยัง JavaScript
         };
 
-        document.getElementById("navLink").addEventListener("click", function(event) {
-            event.preventDefault(); // ป้องกันการเปิดลิงก์ก่อนกำหนด
-            if (data.role === 'teacher') {
-                window.location.href = "teacher.php";
-            } else if (data.role === 'student') {
-                window.location.href = "student.php";
+        document.addEventListener("DOMContentLoaded", function() {
+            // ตรวจสอบและทำให้ปุ่มที่เลือกก่อนหน้า active
+            let activeButton = localStorage.getItem("activeButton");
+            if (activeButton) {
+                document.getElementById(activeButton)?.classList.add("active");
+            }
+
+            // ตรวจสอบค่า selected group ที่เก็บใน localStorage
+            const selectedGroup = localStorage.getItem("selectedGroup");
+            if (selectedGroup) {
+                document.getElementById("groupInput").value = selectedGroup;
             }
         });
+
+        function setActiveButton(event, id) {
+            event.preventDefault(); // ป้องกันการรีเฟรชหน้าหลังจากคลิก
+            localStorage.setItem("activeButton", id); // เก็บ id ของปุ่มที่เลือก
+
+            // ลบคลาส 'active' จากทุกปุ่มแล้วเพิ่มให้ปุ่มที่ถูกเลือก
+            document.querySelectorAll(".btn").forEach(btn => btn.classList.remove("active"));
+            document.getElementById(id)?.classList.add("active");
+
+            // ไปยัง URL ที่ถูกคลิก
+            window.location.href = event.currentTarget.href;
+        }
     </script>
 </body>
 

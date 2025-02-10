@@ -48,23 +48,17 @@ if ($role === 'student') {
     <div class="bg bg3"></div>
 
     <!-- แถบนำทาง -->
-    <nav class="navbar navbar-expand bg-dark navbar-dark fixed-top">
+    <nav class="navbar navbar-expand bg-light navbar-light fixed-top">
         <div class="container-fluid">
-            <ul class="navbar-nav">
+            <a class="navbar-brand" href="teacher.php">
+                <h4><img src="logo.png" alt="Logo" style="width:40px;">ทฤษฎีเครื่องมือกล</h4>
+            </a>
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <a class="nav-link active" href="teacher.php">หน้าแรก</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="score.php">รายชื่อนักเรียน</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link active" data-bs-toggle="offcanvas" data-bs-target="#demo">เมนู</a>
-                </li>
-            </ul>
-
-            <ul class="navbar-nav justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link active" href="profile.php">โปรไฟล์</a>
                 </li>
             </ul>
         </div>
@@ -77,17 +71,26 @@ if ($role === 'student') {
     </div>
 
     <!-- แถบเมนูทางซ้าย -->
-    <div class="offcanvas offcanvas-start text-bg-dark" id="demo">
+    <div class="offcanvas offcanvas-end text-bg-dark" id="demo">
         <div class="offcanvas-header">
             <h1 class="offcanvas-title">เมนู</h1>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body">
+            <button type="button" class="btn btn-warning m-1">
+                <a class=" nav-link active" href="profile.php">โปรไฟล์</a>
+            </button>
+            <button type="button" class="btn btn-warning m-1">
+                <a class="nav-link active" href="score.php">รายชื่อนักเรียน</a>
+            </button>
+            <hr>
             <?php
+            $lessons = array("ความรู้เบื้องต้นเกี่ยวกับเครื่องมือกล", "เครื่องมือกลขนาดเล็ก", "เครื่องเลื่อยกล", "เครื่องจักร", "เครื่องกลึง", "เครื่องกัด", "เครื่องเจียรไน");
+
             for ($i = 1; $i <= 7; $i++) {
-                echo '<div class="dropdown dropend p-1">';
+                echo '<div class="dropdown p-1">';
                 echo '<button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">';
-                echo 'บทที่ ' . $i;
+                echo 'บทที่ ' . $i . " " . $lessons[$i - 1];
                 echo '</button>';
                 echo '<ul class="dropdown-menu">';
                 echo '<li><a class="dropdown-item" href="chapter/chapter' . $i . '/pretest.php">แบบทดสอบก่อนเรียน</a></li>';
@@ -97,6 +100,8 @@ if ($role === 'student') {
                 echo '</div>';
             }
             ?>
+            <hr>
+            <a href='logout.php' class="btn btn-danger m-1">ลงชื่อออก</a>
         </div>
     </div>
 

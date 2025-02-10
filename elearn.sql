@@ -45,5 +45,13 @@ CREATE TABLE
 
 ALTER TABLE students
 ADD COLUMN total_score INT GENERATED ALWAYS AS (
-    pre1 + pos1 + pre2 + pos2 + pre3 + pos3 + pre4 + pos4 + pre5 + pos5 + pre6 + pos6 + pre7 + pos7
+    pre1 + pre2 + pre3 + pre4 + pre5 + pre6 + pre7
 ) STORED;
+
+ALTER TABLE students
+ADD COLUMN total_score2 INT GENERATED ALWAYS AS (
+    pos1 + pos2 + pos3 + pos4 + pos5 + pos6 + pos7
+) STORED;
+
+ALTER TABLE students
+ADD COLUMN student_group INT NOT NULL DEFAULT 1;

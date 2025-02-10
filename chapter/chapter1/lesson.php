@@ -50,14 +50,17 @@ $conn->close();
     <div class="bg bg3"></div>
 
     <!-- แถบนำทาง -->
-    <nav class="navbar navbar-expand bg-dark navbar-dark fixed-top">
+    <nav class="navbar navbar-expand bg-light navbar-light fixed-top">
         <div class="container-fluid">
-            <ul class="navbar-nav">
+            <a id="navLink" class="navbar-brand" href="#">
+                <h4><img src="../../logo.png" alt="Logo" style="width:40px;">ทฤษฎีเครื่องมือกล</h4>
+            </a>
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a id="navLink" class="nav-link" href="#">หน้าแรก</a>
+                    <a id="navLink2" class="nav-link" href="#">หน้าแรก</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#demo">เมนู</a>
+                    <a class="nav-link active" data-bs-toggle="offcanvas" data-bs-target="#demo">เมนู</a>
                 </li>
                 <!-- Audio element ที่จะใช้เล่นไฟล์เสียง -->
                 <audio id="audioPlayer" controls preload="auto">
@@ -75,17 +78,23 @@ $conn->close();
     </div>
 
     <!-- แถบเมนูทางซ้าย -->
-    <div class="offcanvas offcanvas-start text-bg-dark" id="demo">
+    <div class="offcanvas offcanvas-end text-bg-dark" id="demo">
         <div class="offcanvas-header">
             <h1 class="offcanvas-title">เมนู</h1>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body">
+            <button type="button" class="btn btn-warning m-1">
+                <a class=" nav-link active" href="../../profile.php">โปรไฟล์</a>
+            </button>
+            <hr>
             <?php
-            for ($i = 1; $i <= 7; $i++) {
-                echo '<div class="dropdown dropend p-1">';
+            $lessons = array("ความรู้เบื้องต้นเกี่ยวกับเครื่องมือกล", "เครื่องมือกลขนาดเล็ก", "เครื่องเลื่อยกล", "เครื่องจักร", "เครื่องกลึง", "เครื่องกัด", "เครื่องเจียรไน");
+
+            for ($i = 1; $i <= 1; $i++) {
+                echo '<div class="dropdown p-1">';
                 echo '<button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">';
-                echo 'บทที่ ' . $i;
+                echo 'บทที่ ' . $i . " " . $lessons[$i - 1];
                 echo '</button>';
                 echo '<ul class="dropdown-menu">';
                 echo '<li><a class="dropdown-item" href="../chapter' . $i . '/pretest.php">แบบทดสอบก่อนเรียน</a></li>';
@@ -95,6 +104,8 @@ $conn->close();
                 echo '</div>';
             }
             ?>
+            <hr>
+            <a href='../../logout.php' class="btn btn-danger m-1">ลงชื่อออก</a>
         </div>
     </div>
 
@@ -143,13 +154,15 @@ $conn->close();
             role: '<?php echo $role; ?>' // ส่งค่าจาก PHP ไปยัง JavaScript
         };
 
-        document.getElementById("navLink").addEventListener("click", function(event) {
-            event.preventDefault(); // ป้องกันการเปิดลิงก์ก่อนกำหนด
-            if (data.role === 'teacher') {
-                window.location.href = "../../teacher.php";
-            } else if (data.role === 'student') {
-                window.location.href = "../../student.php";
-            }
+        ["navLink", "navLink2"].forEach(id => {
+            document.getElementById(id).addEventListener("click", function(event) {
+                event.preventDefault();
+                if (data.role === 'teacher') {
+                    window.location.href = "../../teacher.php";
+                } else if (data.role === 'student') {
+                    window.location.href = "../../student.php";
+                }
+            });
         });
 
         // ฟังก์ชันที่ใช้เล่นเสียงเมื่อคลิกปุ่ม

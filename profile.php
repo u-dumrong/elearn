@@ -36,10 +36,10 @@ $stmt->close();
 
 // ตรวจสอบ role เพื่อดึงข้อมูลเพิ่มเติม
 if ($role === 'student') {
-    $stmt = $conn->prepare("SELECT pre1, pre2, pre3, pre4, pre5, pre6, pre7, pos1, pos2, pos3, pos4, pos5, pos6, pos7, total_score FROM students WHERE user_id = ?");
+    $stmt = $conn->prepare("SELECT pre1, pre2, pre3, pre4, pre5, pre6, pre7, pos1, pos2, pos3, pos4, pos5, pos6, pos7, total_score, student_group FROM students WHERE user_id = ?");
     $stmt->bind_param("i", $user_id);
     $stmt->execute();
-    $stmt->bind_result($pre1, $pre2, $pre3, $pre4, $pre5, $pre6, $pre7, $pos1, $pos2, $pos3, $pos4, $pos5, $pos6, $pos7, $total_score);
+    $stmt->bind_result($pre1, $pre2, $pre3, $pre4, $pre5, $pre6, $pre7, $pos1, $pos2, $pos3, $pos4, $pos5, $pos6, $pos7, $total_score, $student_group);
     $stmt->fetch();
     $stmt->close();
 } elseif ($role === 'teacher') {
@@ -75,20 +75,17 @@ $conn->close();
     <div class="bg bg3"></div>
 
     <!-- แถบนำทาง -->
-    <nav class="navbar navbar-expand bg-dark navbar-dark fixed-top">
+    <nav class="navbar navbar-expand bg-light navbar-light fixed-top">
         <div class="container-fluid">
-            <ul class="navbar-nav">
+            <a id="navLink" class="navbar-brand" href="student.php">
+                <h4><img src="logo.png" alt="Logo" style="width:40px;">ทฤษฎีเครื่องมือกล</h4>
+            </a>
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a id="navLink" class="nav-link" href="#">หน้าแรก</a>
+                    <a id="navLink2" class="nav-link" href="#">หน้าแรก</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" data-bs-toggle="offcanvas" data-bs-target="#demo">เมนู</a>
-                </li>
-            </ul>
-
-            <ul class="navbar-nav justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link active" href="profile.php">โปรไฟล์</a>
                 </li>
             </ul>
         </div>
@@ -101,38 +98,34 @@ $conn->close();
     </div>
 
     <!-- แถบเมนูทางซ้าย -->
-    <div class="offcanvas offcanvas-start text-bg-dark" id="demo">
+    <div class="offcanvas offcanvas-end text-bg-dark" id="demo">
         <div class="offcanvas-header">
             <h1 class="offcanvas-title">เมนู</h1>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body">
-            <?php
-            for ($i = 1; $i <= 7; $i++) {
-                echo '<div class="dropdown dropend p-1">';
-                echo '<button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">';
-                echo 'บทที่ ' . $i;
-                echo '</button>';
-                echo '<ul class="dropdown-menu">';
-                echo '<li><a class="dropdown-item" href="chapter/chapter' . $i . '/pretest.php">แบบทดสอบก่อนเรียน</a></li>';
-                echo '<li><a class="dropdown-item" href="chapter/chapter' . $i . '/lesson.php">บทเรียน</a></li>';
-                echo '<li><a class="dropdown-item" href="chapter/chapter' . $i . '/postest.php">แบบทดสอบหลังเรียน</a></li>';
-                echo '</ul>';
-                echo '</div>';
-            }
-            ?>
+            <button type="button" class="btn btn-warning m-1">
+                <a class=" nav-link active" href="profile.php">โปรไฟล์</a>
+            </button>
+            <hr>
+            <a href='logout.php' class="btn btn-danger m-1">ลงชื่อออก</a>
         </div>
     </div>
 
     <!-- เนื้อหา -->
     <div class="d-flex justify-content-center align-items-center mt-5">
         <div class="card" style="width:400px">
+            <?php
+            $profile_picture = !empty($profile_picture) ? $profile_picture : 'who.png';
+            ?>
             <img class="card-img-top" src="uploads/<?php echo htmlspecialchars($profile_picture); ?>" alt="" style="width:100%">
+
             <div class="card-body">
                 <p class="card-text"><strong>ชื่อผู้ใช้:</strong> <?php echo htmlspecialchars($username); ?></p>
                 <p class="card-text"><strong>อีเมล:</strong> <?php echo htmlspecialchars($email); ?></p>
 
                 <?php if ($role === 'student'): ?>
+                    <p class="card-text"><strong>กลุ่มนักเรียน:</strong> <?php echo htmlspecialchars($student_group); ?></p>
                     <p class="card-text"><strong>คะแนนล่าสุด:</strong></p>
                     <?php
                     $score = [$pre1,  $pos1, $pre2, $pos2, $pre3, $pos3, $pre4, $pos4, $pre5, $pos5, $pre6, $pos6, $pre7, $pos7];
@@ -152,7 +145,6 @@ $conn->close();
                     <p class="card-text"><strong>แผนก:</strong> <?php echo htmlspecialchars($department); ?></p>
                 <?php endif; ?>
                 <a href='editPro.php' class="btn navy text-white">แก้ไขโปรไฟล์</a>
-                <a href='logout.php' class="btn btn-danger">ลงชื่อออก</a>
             </div>
         </div>
     </div>
@@ -168,13 +160,15 @@ $conn->close();
             role: '<?php echo $role; ?>' // ส่งค่าจาก PHP ไปยัง JavaScript
         };
 
-        document.getElementById("navLink").addEventListener("click", function(event) {
-            event.preventDefault(); // ป้องกันการเปิดลิงก์ก่อนกำหนด
-            if (data.role === 'teacher') {
-                window.location.href = "teacher.php";
-            } else if (data.role === 'student') {
-                window.location.href = "student.php";
-            }
+        ["navLink", "navLink2"].forEach(id => {
+            document.getElementById(id).addEventListener("click", function(event) {
+                event.preventDefault();
+                if (data.role === 'teacher') {
+                    window.location.href = "teacher.php";
+                } else if (data.role === 'student') {
+                    window.location.href = "student.php";
+                }
+            });
         });
     </script>
 </body>

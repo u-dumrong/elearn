@@ -41,7 +41,7 @@ document.getElementById('checkAnswers').addEventListener('click', function () {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             console.log(xhr.responseText);
-            //window.location.href = '../../../profile.php';
+            window.location.href = '../../profile.php';
         }
     };
     const data = { pre4: score };
